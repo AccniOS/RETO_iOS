@@ -22,6 +22,8 @@
 		0BFB402B1F96893C0015571E /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFB402A1F96893C0015571E /* DetailVC.swift */; };
 		17B673FF1F979ED1009D7BB9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17B673FE1F979ED1009D7BB9 /* Settings.bundle */; };
 		3D405FB11F97B386002ABE7E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D405FB01F97B386002ABE7E /* Utils.swift */; };
+		3D4FC80B1F98C03600F109B0 /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FC80A1F98C03600F109B0 /* UIApplication+Ext.swift */; };
+		3D4FC80D1F98C62000F109B0 /* UserDefaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FC80C1F98C62000F109B0 /* UserDefaultService.swift */; };
 		3DDF9F111F97490500367906 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF9F101F97490500367906 /* CustomNavigationBar.swift */; };
 		AE41CF181F973A7700BA9504 /* LocalCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE41CF171F973A7700BA9504 /* LocalCoreDataService.swift */; };
 		CAC1C793EE2407D213D8940C /* Pods_RetoSantander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DC1631E03A53FD737FB8C7 /* Pods_RetoSantander.framework */; };
@@ -51,6 +53,8 @@
 		17B673FE1F979ED1009D7BB9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		36DC1631E03A53FD737FB8C7 /* Pods_RetoSantander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RetoSantander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D405FB01F97B386002ABE7E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3D4FC80A1F98C03600F109B0 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
+		3D4FC80C1F98C62000F109B0 /* UserDefaultService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultService.swift; sourceTree = "<group>"; };
 		3DDF9F101F97490500367906 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		866E8366A20A5A6BD42423EF /* Pods-RetoSantander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RetoSantander.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RetoSantander/Pods-RetoSantander.debug.xcconfig"; sourceTree = "<group>"; };
 		AE41CF171F973A7700BA9504 /* LocalCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCoreDataService.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			children = (
 				0B5280661F96A92C00942250 /* UImageview+Ext.swift */,
 				0B5280641F96A32500942250 /* UIViewController+ext.swift */,
+				3D4FC80A1F98C03600F109B0 /* UIApplication+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -126,6 +131,16 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		3D4FC80E1F98C62E00F109B0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3D4FC80C1F98C62000F109B0 /* UserDefaultService.swift */,
+				DB6A21C61F965F63007CE01D /* RemoteBBC_NewsService.swift */,
+				AE41CF171F973A7700BA9504 /* LocalCoreDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		5FE5983ECB3583CE7251F7AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,14 +170,13 @@
 		DB6A21A91F964BDA007CE01D /* RetoSantander */ = {
 			isa = PBXGroup;
 			children = (
+				3D4FC80E1F98C62E00F109B0 /* Service */,
 				0B5280631F96A31500942250 /* Extension */,
 				0BFB401F1F96880D0015571E /* Util */,
 				0BBFBDF71F96868B0030A912 /* View */,
 				0BBFBDF61F9686850030A912 /* Resources */,
 				0BBFBDF51F9686800030A912 /* Controller */,
 				DB6A21BC1F965776007CE01D /* BBDD */,
-				DB6A21C61F965F63007CE01D /* RemoteBBC_NewsService.swift */,
-				AE41CF171F973A7700BA9504 /* LocalCoreDataService.swift */,
 			);
 			path = RetoSantander;
 			sourceTree = "<group>";
@@ -328,6 +342,7 @@
 				DB6A21C11F9657F9007CE01D /* NewsDB.xcdatamodeld in Sources */,
 				AE41CF181F973A7700BA9504 /* LocalCoreDataService.swift in Sources */,
 				0BFB402B1F96893C0015571E /* DetailVC.swift in Sources */,
+				3D4FC80B1F98C03600F109B0 /* UIApplication+Ext.swift in Sources */,
 				0BFB401E1F9687FE0015571E /* FancyView.swift in Sources */,
 				0BBFBE091F9687290030A912 /* NewCell.swift in Sources */,
 				3D405FB11F97B386002ABE7E /* Utils.swift in Sources */,
@@ -338,6 +353,7 @@
 				0BBFBE0E1F96873C0030A912 /* AppDelegate.swift in Sources */,
 				DB6A21C31F965A5C007CE01D /* NewBBCManaged+Mapping.swift in Sources */,
 				0BBFBE0F1F96873C0030A912 /* ViewController.swift in Sources */,
+				3D4FC80D1F98C62000F109B0 /* UserDefaultService.swift in Sources */,
 				DB6A21C71F965F63007CE01D /* RemoteBBC_NewsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

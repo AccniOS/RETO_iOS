@@ -14,10 +14,10 @@ class LocalCoreDataService {
     let remoteNewService = RemoteBBC_NewsService()
     let stack  = CoreDataStack.sharedInstance
     
-    
-    
-    
     func getBBC_News(localHandler: ([NewBBC]?) -> Void, remoteHandler: @escaping ([NewBBC]?) -> Void) {
+        
+        let strUrl = UserDefaultService.getData(key: Settings.url)
+        manageChangeURLPreferences(strUrl: strUrl)
         
         localHandler(self.queryGetNews())
         
@@ -44,6 +44,18 @@ class LocalCoreDataService {
         }
         
         
+    }
+    
+    
+    func manageChangeURLPreferences(strUrl: String) {
+        let urlStore = UserDefaultService.getData(key: Default.urlStore)
+        if !urlStore.isEmpty  {
+            if strUrl != urlStore {
+                UserDefaultService.saveData(info: urlStore, key: Default.urlStore)
+                let localCoreDataService = LocalCoreDataService()
+                localCoreDataService.deleteAllNews()
+            }
+        }
     }
     
 
@@ -134,6 +146,20 @@ class LocalCoreDataService {
         
     }
 
+    func deleteAllNews() {
+        let context = stack.persistentContainer.viewContext
+        let request : NSFetchRequest<NewBBCManaged> = NewBBCManaged.fetchRequest()
 
-
+        if let result = try? context.fetch(request) {
+            for object in result {
+                context.delete(object)
+            }
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error while updating Core Data")
+        }
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Utils {
     
@@ -103,4 +104,16 @@ class Utils {
         }
         return monthString
     }
+    
+    
+    //Abre el alert de error de credenciales
+    static func openAlert(viewController: UIViewController, title: String, message: String, completionHandler: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("aceptar", comment: ""), style: UIAlertActionStyle.default, handler: {
+            (action : UIAlertAction!) -> Void in
+            completionHandler()
+        }))
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    
 }

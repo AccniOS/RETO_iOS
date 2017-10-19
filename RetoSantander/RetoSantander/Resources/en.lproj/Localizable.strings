@@ -28,3 +28,8 @@
 "october"= "Octubre";
 "november"= "Noviembre";
 "dicember"= "Diciembre";
+
+/* Alert */
+"aceptar" = "Aceptar";
+"errorTitle" = "Error de conexión";
+"errorMessage" = "Se ha producido un error al cargar el Feed";
