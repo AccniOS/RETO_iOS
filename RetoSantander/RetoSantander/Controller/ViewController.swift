@@ -36,9 +36,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Añade sombra a la barra de navegación
         self.addShadowNavigationBar()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         loadData()
     }
-        
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
